@@ -14,7 +14,7 @@ const add = function addThem() {
 const addSub = add();  
 for (var i = 1; i <= 3; i++) setTimeout(() => (addSub(i)),100);
 ```
-`OUTPUT: 4, 16 64`  
+`OUTPUT: 4, 16, 64`  
 
 
 ### Challenge 2
@@ -70,9 +70,10 @@ console.log(num++);
 `OUTPUT: 10` 
 <p>
 num++ - first console(10) then increase (11) 
+
 ++num - first increase(11) then console(11)
 
-That's not quite right. `num++` is basically like writing `(() => { const tmp = num; ++num; return tmp })()` (but obviously without any need for a function). So the increase happens *before* the console log, it's just that the console logs the temporary value that was returned by the post-increment. This is why pre-increment is faster (not considering optimisations) since there's no need to create a temporary value.
+That's not quite right. `num++` is basically like writing `(() => { const tmp = num; ++num; return tmp })()` (but obviously without any need for a function). So the increase happens *before* the console log, it's just that the console logs the temporary value that was returned by the post-increment. This is why pre-increment is faster (not considering optimization's) since there's no need to create a temporary value.
 </p>
 
 ### Challenge 
